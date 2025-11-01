@@ -49,7 +49,7 @@ fieldset{
     justify-content: center;
     border-radius: .5rem;
 }
-fieldset label, fieldset button, .input-option{
+.element{
     margin-top: 1rem;
 }
 
@@ -70,10 +70,12 @@ button:hover{
 
 .input-option-inputs{
     min-width: 280px;
+    display: flex;
+    gap: .5rem;
 }
 
-.input-option-inputs select{
-    margin-left: 1rem;
+.input-option-inputs input[type=tel]{
+    width: 100%;
 }
 
 input:focus{
@@ -99,4 +101,20 @@ select:hover{
     background-color: var(--text);
     color: var(--bg);
     cursor: pointer;
+}
+
+.input-w-unit{
+    display: flex;
+    gap: .5rem;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.input-w-unit .n-unit{
+    width: 100%;
+}
+
+.unit-input{
+    width: 10%;
+    text-indent: .2rem;
 }

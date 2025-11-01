@@ -8,9 +8,15 @@
 </head>
 <body class="hanken-grotesk">
     <fieldset>
-        <label for="interlineado">Interlineado</label>
-        <input type="tel" inputmode="decimal" name="interlineado" id="interlineado" class="hanken-grotesk">
-        <div class="input-option">
+        <div class="element">
+            <label for="interlineado">Interlineado</label>
+            <div class="input-w-unit">
+                <input type="tel" inputmode="decimal" name="interlineado" id="interlineado" class="n-unit hanken-grotesk">
+                <input type="text" placeholder="pt" disabled class="hanken-grotesk unit-input">
+            </div>
+
+        </div>
+        <div class="element">
             <label for="alturaPagina">Altura de la página</label>
             <div class="input-option-inputs">
                 <input type="tel" inputmode="decimal" name="alturaPagina" id="alturaPagina" class="hanken-grotesk">
@@ -22,13 +28,19 @@
                 </select>
             </div>
         </div>
-        <label for="cantFilas">Cantidad de filas</label>
+        <label class="element" for="cantFilas">Cantidad de filas</label>
         <input type="tel" inputmode="decimal" name="cantFilas" id="cantFilas" class="hanken-grotesk">
-        <label for="linXFila">Lineas por fila</label>
+        <label class="element" for="linXFila">Lineas por fila (opcional)</label>
         <input type="tel" inputmode="decimal" name="linXFila" id="linXFila" class="hanken-grotesk">
-        <button id="calculate" class="hanken-grotesk">Calcular</button>
-        <label for="tamMargenes">Tamaño de márgenes</label>
-        <input type="text" inputmode="numeric" name="tamMargenes" id="tamMargenes" readonly class="hanken-grotesk">
+        <button id="calculate" class="hanken-grotesk element">Calcular</button>
+        <div class="element">
+            <label for="tamMargenes">Tamaño de márgenes</label>
+            <div class="input-w-unit">
+                <input type="text" inputmode="numeric" name="tamMargenes" id="tamMargenes" readonly class="n-unit hanken-grotesk">
+                <input placeholder="pt" type="text" disabled class="hanken-grotesk unit-input">
+            </div>
+
+        </div>
     </fieldset>
 
 </body>
