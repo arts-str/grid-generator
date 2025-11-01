@@ -12,6 +12,7 @@
     --bg: #02020f;
     --bg-lighter: #22222f;
     --text: #d9d9d9;
+    --text-darker: #a7a7a7;
 }
 
 
@@ -117,4 +118,11 @@ select:hover{
 .unit-input{
     width: 10%;
     text-indent: .2rem;
+}
+
+.subtext{
+    color: var(--text-darker);
+    font-style: italic;
+    font-size: .8rem;
+    margin: 0;
 }
