@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+
+.hanken-grotesk {
+    font-family: "Hanken Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12pt;
+  }
+
+:root{
+    --bg: #02020f;
+    --bg-lighter: #22222f;
+    --text: #d9d9d9;
+}
+
+
+::-moz-selection { /* Code for Firefox */
+    color: var(--text);
+    background: var(--bg);
+}
+  
+::selection {
+    color: var(--text);
+    background: var(--bg);
+}
+* {
+    box-sizing: border-box;
+}
+body, html{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-5%);
+    height: 100dvh;
+    font-family: Hanken;
+}
+fieldset{
+    display: flex;
+    flex-direction: column;
+    flex: 0.01 0 300px;
+    justify-content: center;
+    border-radius: .5rem;
+}
+fieldset label, fieldset button, .input-option{
+    margin-top: 1rem;
+}
+
+button{
+    background-color: var(--bg);
+    color: var(--text);
+    border: 1px var(--text) solid;
+    border-radius: .3rem;
+    height: 3rem;
+    
+}
+button:hover{
+    background-color: var(--text);
+    color: var(--bg);
+    border: 1px var(--bg) solid;
+    cursor: pointer;
+}
+
+.input-option-inputs{
+    width: 100%;
+}
+
+.input-option-inputs select{
+    margin-left: 1rem;
+}
+
+input:focus{
+    outline: none;
+    background-color: var(--text);
+    color: var(--bg-lighter);
+}
+input{
+    border: none;
+    border-radius: .3rem;
+    height: 2rem;
+    background-color: var(--bg-lighter);
+    color: var(--text);
+}
+select{
+    border: none;
+    border-radius: .3rem;
+    height: 2rem;
+    background-color: var(--bg-lighter);
+    color: var(--text);
+}
+select:hover{
+    background-color: var(--text);
+    color: var(--bg);
+    cursor: pointer;
+}
