@@ -6,19 +6,31 @@ const margenesInput = document.getElementById('tamMargenes');
 const measureInput = document.getElementById('measure');
 const linXFilaInput = document.getElementById('linXFila');
 let currentMeasure = measureInput.value;
-let alturaPagina = parseFloat(aPaginaInput.value);
-let interlineado = parseFloat(interInput.value);
-let cantidadDeFilas = parseFloat(filasInput.value);
+let alturaPagina = parseFloat(aPaginaInput.value.replace(/,/g, '.'));
+let interlineado = parseFloat(interInput.value.replace(/,/g, '.'));
+let cantidadDeFilas = parseFloat(filasInput.value.replace(/,/g, '.'));
 let cantidadDeMedianiles = cantidadDeFilas - 1;
 let medianilDeFilas = interlineado;
 
+
+const inputs = document.querySelectorAll('input');
+for (const input of inputs) {
+    input.oninput = () =>{
+        updateValues();
+    }
+}
+
 measureInput.onchange = () =>{
-    updateValues();
-    aPaginaInput.value = alturaPagina.toFixed(2);
+    if (aPaginaInput.value !== '') {
+        updateValues();
+        aPaginaInput.value = alturaPagina.toFixed(2);
+    }
 }
 
 calculateBttn.onclick = () => {
+    
     updateValues();
+    
     let linXFila;
     if (linXFilaInput.value !== '') {
         linXFila = parseInt(linXFilaInput.value);
@@ -32,7 +44,8 @@ calculateBttn.onclick = () => {
 }
 
 function updateValues() {
-    updateAltura(currentMeasure, measureInput.value, parseFloat(aPaginaInput.value));
+    alturaPagina = aPaginaInput.value.replace(/,/g, '.');
+    updateAltura(currentMeasure, measureInput.value, parseFloat(aPaginaInput.value.replace(/,/g, '.')));
     interlineado = parseFloat(interInput.value);
     cantidadDeFilas = parseFloat(filasInput.value);
     cantidadDeMedianiles = cantidadDeFilas - 1;

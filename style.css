@@ -59,7 +59,7 @@ button{
     border: 1px var(--text) solid;
     border-radius: .3rem;
     height: 3rem;
-    
+
 }
 button:hover{
     background-color: var(--text);
@@ -69,7 +69,7 @@ button:hover{
 }
 
 .input-option-inputs{
-    width: 100%;
+    min-width: 280px;
 }
 
 .input-option-inputs select{
