@@ -7,45 +7,62 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="hanken-grotesk">
-    <fieldset>
-        <div class="element">
-            <label for="interlineado">Interlineado</label>
-            <div class="input-w-unit">
-                <input type="tel" inputmode="decimal" name="interlineado" id="interlineado" class="n-unit hanken-grotesk">
-                <input type="text" placeholder="pt" disabled class="hanken-grotesk unit-input">
+    <div class="center">
+        <main>
+        <fieldset>
+            <div class="element">
+                <label for="interlineado">Interlineado</label>
+                <div class="input-w-unit">
+                    <input type="tel" inputmode="decimal" name="interlineado" id="interlineado" class="n-unit hanken-grotesk" required>
+                    <input type="text" placeholder="pt" disabled class="hanken-grotesk unit-input">
+                </div>
+
+            </div>
+            <div class="element">
+                <label for="alturaPagina">Altura de la página</label>
+                <div class="input-option-inputs">
+                    <input type="tel" inputmode="decimal" name="alturaPagina" id="alturaPagina" class="hanken-grotesk" required>
+                    <select name="measure" id="measure" class="hanken-grotesk">
+                        <option value="cm">cm</option>
+                        <option value="mm">mm</option>
+                        <option value="pt">pt</option>
+                        <option value="px">px</option>
+                    </select>
+                </div>
+            </div>
+            <label class="element" for="cantFilas">Cantidad de filas</label>
+            <input type="tel" inputmode="decimal" name="cantFilas" id="cantFilas" class="hanken-grotesk">
+            <p class="subtext">(Calcula medianiles de la altura del interlineado)</p>
+            <label class="element" for="linXFila">Lineas por fila (opcional)</label>
+            <input type="tel" inputmode="decimal" name="linXFila" id="linXFila" class="hanken-grotesk">
+            <p id="hint" class="hint-msg" style="color:#d9a24f; display:none; font-size:14px;"></p>
+            <button id="calculate" class="hanken-grotesk element">Calcular</button>
+            <div class="element">
+                <label for="tamMargenes">Tamaño de márgenes</label>
+                <div class="input-w-unit">
+                    <input type="text" inputmode="numeric" name="tamMargenes" id="tamMargenes" readonly class="n-unit hanken-grotesk">
+                    <input placeholder="pt" type="text" disabled class="hanken-grotesk unit-input">
+                </div>
+
             </div>
 
-        </div>
-        <div class="element">
-            <label for="alturaPagina">Altura de la página</label>
-            <div class="input-option-inputs">
-                <input type="tel" inputmode="decimal" name="alturaPagina" id="alturaPagina" class="hanken-grotesk">
-                <select name="measure" id="measure" class="hanken-grotesk">
-                    <option value="cm">cm</option>
-                    <option value="mm">mm</option>
-                    <option value="pt">pt</option>
-                    <option value="px">px</option>
-                </select>
-            </div>
-        </div>
-        <label class="element" for="cantFilas">Cantidad de filas</label>
-        <input type="tel" inputmode="decimal" name="cantFilas" id="cantFilas" class="hanken-grotesk">
-        <p class="subtext">(Calcula medianiles de la altura del interlineado)</p>
-        <label class="element" for="linXFila">Lineas por fila (opcional)</label>
-        <input type="tel" inputmode="decimal" name="linXFila" id="linXFila" class="hanken-grotesk">
-        <button id="calculate" class="hanken-grotesk element">Calcular</button>
-        <div class="element">
-            <label for="tamMargenes">Tamaño de márgenes</label>
-            <div class="input-w-unit">
-                <input type="text" inputmode="numeric" name="tamMargenes" id="tamMargenes" readonly class="n-unit hanken-grotesk">
-                <input placeholder="pt" type="text" disabled class="hanken-grotesk unit-input">
-            </div>
+        </fieldset>
+        <section class="previsualizacion"> 
+            <h2 id="previewText" style="display: none;">Previsualización de grilla</h2>
+            <canvas id="gridCanvas" width="400" height="600"></canvas>
+        </section>
+    </main>
+    </div>
+    
+    <footer class="footer" id="footer-container" draggable="false">
+        <p>Herramienta creada por y para diseñadores <br> <strong><a href="https://arts-str.github.io" target="_blank">Facundo Magnin | ARTS.str</a></strong> </p>
+    </footer>
 
-        </div>
-
-    </fieldset>
 
 </body>
 <script src="js/convertions.js"></script>
+<script src="js/sanitization.js"></script>
+<script src="js/warnings.js"></script>
+<script src="js/canvas.js"></script>
 <script src="js/script.js"></script>
 </html>

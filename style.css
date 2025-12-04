@@ -36,12 +36,13 @@ body, html{
 body{
     background-color: var(--bg);
     color: var(--text);
+}
+.center{
+    width: 100%;
+    height: fit-content;
     display: flex;
-    justify-content: center;
     align-items: center;
-    transform: translateY(-5%);
-    height: 100dvh;
-    font-family: Hanken;
+    justify-content: center;
 }
 fieldset{
     display: flex;
@@ -49,6 +50,7 @@ fieldset{
     flex: 0.01 0 300px;
     justify-content: center;
     border-radius: .5rem;
+    height: fit-content;
 }
 .element{
     margin-top: 1rem;
@@ -125,4 +127,50 @@ select:hover{
     font-style: italic;
     font-size: .8rem;
     margin: 0;
+}
+
+.previsualizacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 0 0 5rem;
+}
+
+#gridCanvas{
+    background-color: var(--text);
+}
+#previewText{
+    margin: 0;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    user-select: none;
+    mix-blend-mode: difference;
+}
+a{
+    text-decoration: none;
+    color: var(--text);
+}
+canvas{
+    display: none;
+}
+
+@media screen and (max-width:766px) {
+    main{
+        flex-direction: column;
+    }
+    .previsualizacion{
+        margin: 2rem 0 5rem 0;
+    }
 }
